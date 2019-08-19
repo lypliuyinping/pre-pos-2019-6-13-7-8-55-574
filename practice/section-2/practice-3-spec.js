@@ -14,7 +14,7 @@ describe('practice-2-3', () => {
     'b', 'b', 'b', 'b', 'b', 'b',
     'd-5'
   ];
-
+console.log( 'd-5')
   it('把A集合中相同的元素统计出数量', () => {
 
     const result = countSameElements(collection);
