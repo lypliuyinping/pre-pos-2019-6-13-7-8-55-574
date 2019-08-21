@@ -1,18 +1,13 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  var  collectionB = objectB.value;
-  for (var i = 0;i < collectionA.length;i++)
-  {
-
-    for (var j = 0;j<collectionB.length;j++)
-    {
-      if (collectionA[i].key == collectionB[j])
-      {
-        collectionA[i].count --;
+  var valueVbjectB=objectB.value;
+  for(let i=0;i<collectionA.length;i++){
+    for (let j=0;j<valueVbjectB.length;j++){
+      if (collectionA[i].key==valueVbjectB[j]){
+        collectionA[i].count=collectionA[i].count-1;       
       }
     }
   }
   return collectionA;
-  //return '实现练习要求，并改写该行代码。';
 }

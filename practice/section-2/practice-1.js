@@ -1,16 +1,19 @@
 "use strict";
 function countSameElements(collection) {
-  var result = [];
-  var map = new Map();
-  for (var i = 0; i < collection.length;) {
-    var cnt = 0;
-    for (var j = i; j < collection.length; j++) {
-      if (collection[i] == collection[j]) {
-        cnt++;
-      }
+  var result=[];
+  var map=new Map();
+  for (let i=0;i<collection.length;i++){
+    if (map.get(collection[i])==null){
+      map.set(collection[i],1)
+    }else{
+      map.set(collection[i],map.get(collection[i])+1);
     }
-    result.push({ key: collection[i], count: cnt });
-    i += cnt;
   }
+    map.forEach(function(value,key){
+    result.push({key:key,count:value}) 
+    })
+
+
+
   return result;
 }

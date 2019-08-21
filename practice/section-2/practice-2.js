@@ -3,26 +3,28 @@
 function countSameElements(collection) {
   var result = [];
   var map = new Map();
-  var ele, num;
-  for (var i = 0; i < collection.length; i++) {
+  var key;
+  var value;
+  for (let i = 0; i < collection.length; i++) {
     if (collection[i].length == 1) {
-      if (map.get(collection[i]) == null) {
+      if (map.get(collection[i])==null){
         map.set(collection[i], 1);
       } else {
         map.set(collection[i], map.get(collection[i]) + 1);
       }
     } else {
-      ele = collection[i][0];
-      num = Number(collection[i][2]);
-      if (map.get(ele) == null) {
-        map.set(ele, num);
+      key = collection[i][0];
+      value = Number(collection[i][2]);
+      if (map.get(key) == null) {
+        map.set(key, value);
       } else {
-        map.set(ele, map.get(ele) + num);
+        map.set(key, map.get(key)+value);
       }
     }
   }
-  map.forEach(function(key, value) {
-    result.push({ key: value, count: key });
+  map.forEach(function(value, key) {
+    result.push({key:key,count:value})
   });
+
   return result;
 }
